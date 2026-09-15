@@ -91,12 +91,7 @@
       '</div>';
 
     setTimeout(function () {
-      var drawer = document.getElementById("fhNavDrawer");
-      var backdrop = document.getElementById("fhNavBackdrop");
-      if (drawer && drawer.parentNode !== document.body) {
-        document.body.appendChild(backdrop);
-        document.body.appendChild(drawer);
-      }
+      // Intentionally removed document.body.appendChild to keep links in desktop header
     }, 0);
   }
 
@@ -379,11 +374,9 @@
       var drawer = getDrawer();
       var backdrop = getBackdrop();
       if (backdrop) {
-        if (backdrop.parentNode !== document.body) document.body.appendChild(backdrop);
         backdrop.classList.add("is-open");
       }
       if (drawer) {
-        if (drawer.parentNode !== document.body) document.body.appendChild(drawer);
         drawer.classList.add("is-open");
       }
       document.body.classList.add("no-scroll");

@@ -1094,7 +1094,9 @@ table.data .actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .fh-nav__backdrop {
   display: none !important;
   position: fixed;
-  inset: 0;
+  top: 0; left: 0; right: 0;
+  height: 100vh;
+  width: 100vw;
   background: rgba(0, 0, 0, 0);
   backdrop-filter: blur(0px);
   -webkit-backdrop-filter: blur(0px);
