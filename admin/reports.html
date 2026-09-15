@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reports | Future Homes Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-body" data-admin="reports" data-title="Reports" data-sub="Inventory, booking and sales analytics" data-wa="off">
+
+<div class="admin-shell" id="adminShell">
+  <aside class="admin-side" id="adminSide"></aside>
+  <div class="admin-main">
+    <header class="admin-top" id="adminTop"></header>
+    <main class="admin-content">
+      <div class="admin-page-head">
+        <div><h1>Reports</h1><p>Filter by project and status, then export to Excel (CSV) or print to PDF.</p></div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <button class="btn btn--ghost btn--sm" id="reportPdf" data-magnetic>Export PDF</button>
+          <button class="btn btn--primary btn--sm" id="reportExport" data-magnetic>Export Excel</button>
+        </div>
+      </div>
+
+      <div class="filter-bar">
+        <div class="field"><label for="reportType">Report Type</label><select class="select" id="reportType"><option>Plot Inventory</option><option>Flat Inventory</option><option>Booking Report</option><option>Available Inventory</option><option>Enquiry Report</option><option>Quotation Report</option></select></div>
+        <div class="field"><label for="reportProject">Project</label><select class="select" id="reportProject"></select></div>
+        <div class="field"><label for="reportStatus">Status</label><select class="select" id="reportStatus"></select></div>
+        <div class="field"><label for="reportFrom">From Date</label><input class="input" type="date" id="reportFrom"></div>
+        <div class="field"><label for="reportTo">To Date</label><input class="input" type="date" id="reportTo"></div>
+      </div>
+
+      <div class="panel mt-3">
+        <div class="panel__head"><h3>Report Output</h3><span class="badge badge--available" id="reportCount">0 records</span></div>
+        <div class="table-wrap" style="border:none;border-radius:0">
+          <table class="data"><thead id="reportHead"></thead><tbody id="reportRows"></tbody></table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="admin-backdrop"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

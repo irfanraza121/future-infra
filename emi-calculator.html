@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EMI Calculator | Future Homes Infra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="emi-calculator">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><span>EMI Calculator</span></nav>
+    <h1 data-reveal data-reveal-delay="1">EMI Calculator</h1>
+    <p data-reveal data-reveal-delay="2">Estimate your monthly payment, total interest and overall cost before you book.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="emi-layout">
+      <form class="panel" id="emiForm" data-reveal>
+        <div class="panel__head"><h3>Loan Details</h3></div>
+        <div class="panel__body form-grid">
+          <div class="field">
+            <label for="emiValue">Property Value</label>
+            <input class="input" type="number" id="emiValue" value="2500000" min="0" step="10000">
+          </div>
+          <div class="field">
+            <label for="emiDown">Down Payment</label>
+            <input class="input" type="number" id="emiDown" value="500000" min="0" step="10000">
+          </div>
+          <div class="field">
+            <label for="emiLoan">Loan Amount (auto)</label>
+            <input class="input" type="number" id="emiLoan" value="2000000" readonly>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="emiRate">Interest Rate (% p.a.)</label>
+              <input class="input" type="number" id="emiRate" value="8.5" min="0" step="0.1">
+            </div>
+            <div class="field">
+              <label for="emiTenure">Loan Tenure (Years)</label>
+              <input class="input" type="number" id="emiTenure" value="15" min="1" step="1">
+            </div>
+          </div>
+          <button class="btn btn--primary btn--block" type="submit" data-magnetic>Calculate EMI</button>
+        </div>
+      </form>
+
+      <div class="emi-result" data-reveal data-reveal-delay="1">
+        <div class="emi-result__main">
+          <span>Monthly EMI</span>
+          <b id="emiMonthly">&#8377;0</b>
+        </div>
+        <div class="emi-bars">
+          <div class="emi-bar"><i class="p" id="emiBarP" style="width:0%"></i><i class="i" id="emiBarI" style="width:0%"></i></div>
+          <div class="emi-split">
+            <div><small>Principal</small><b id="emiPrincipal">&#8377;0</b><small style="display:block;color:#9aa7b5;text-transform:none;letter-spacing:0" id="emiSplitP"></small></div>
+            <div><small>Total Interest</small><b id="emiInterest">&#8377;0</b><small style="display:block;color:#9aa7b5;text-transform:none;letter-spacing:0" id="emiSplitI"></small></div>
+          </div>
+        </div>
+        <div class="detail-list" style="border-top:1px solid rgba(255,255,255,.08)">
+          <div style="border-bottom:none"><dt style="color:#9aa7b5">Total Payment</dt><dd><b id="emiTotal">&#8377;0</b></dd></div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:22px">
+          <button class="btn btn--light btn--sm" id="emiDownload" data-magnetic>Download Calculation</button>
+          <a class="btn btn--primary btn--sm" href="contact.html#enquiry" data-no-transition data-magnetic>Request Quotation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="kicker">Repayment Summary</span>
+      <h2>Understand your outflow</h2>
+      <p>The chart above shows how much of your total payment goes towards principal versus interest over the full tenure.</p>
+    </div>
+    <div class="grid grid-3">
+      <div class="card"><div class="card__body"><h3>Lower EMI</h3><p class="muted" style="font-size:.9rem">Increase your down payment or extend the tenure to reduce the monthly burden.</p></div></div>
+      <div class="card"><div class="card__body"><h3>Less Interest</h3><p class="muted" style="font-size:.9rem">A shorter tenure or a better interest rate significantly lowers the total interest paid.</p></div></div>
+      <div class="card"><div class="card__body"><h3>Plan Better</h3><p class="muted" style="font-size:.9rem">Download the calculation and discuss a flexible payment plan with our team.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/pdf-helper.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

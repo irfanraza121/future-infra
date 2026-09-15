@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flat Booking Status | Future Homes Infra</title>
+<meta name="description" content="Live flat booking status report across all Future Homes Infra projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="flat-status">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><span>Flat Status</span></nav>
+    <h1 data-reveal data-reveal-delay="1">Flat Booking Status Report</h1>
+    <p data-reveal data-reveal-delay="2">Track apartment inventory by wing, floor, type, facing and booking status.</p>
+  </div>
+</header>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="filter-bar" data-reveal>
+      <div class="field"><label for="fsProject">Project Name</label><select class="select" id="fsProject"><option value="">All Projects</option></select></div>
+      <div class="field"><label for="fsWing">Wing</label><select class="select" id="fsWing"><option value="">All Wings</option><option>A</option><option>B</option></select></div>
+      <div class="field"><label for="fsFloor">Floor</label><select class="select" id="fsFloor"><option value="">All Floors</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></div>
+      <div class="field"><label for="fsType">Flat Type</label><select class="select" id="fsType"><option value="">All Types</option><option>1 BHK</option><option>2 BHK</option><option>3 BHK</option></select></div>
+      <div class="field"><label for="fsFacing">Facing</label><select class="select" id="fsFacing"><option value="">Any Facing</option><option>East</option><option>West</option><option>North</option><option>South</option><option>North-East</option><option>South-West</option></select></div>
+      <div class="field"><label for="fsArea">Area (Sq.Ft.)</label><select class="select" id="fsArea"><option value="">Any Area</option><option value="0-1000">Up to 1000</option><option value="1000-1500">1000 - 1500</option><option value="1500-2000">1500 - 2000</option><option value="2000-99999">Above 2000</option></select></div>
+      <div class="field"><label for="fsStatus">Status</label><select class="select" id="fsStatus"><option value="">All Status</option><option>Available</option><option>Booked</option><option>Agreement</option><option>Sold</option></select></div>
+      <div class="filter-actions">
+        <button class="btn btn--primary" type="button" data-magnetic>View Report</button>
+        <button class="btn btn--ghost" type="button" id="fsReset" data-magnetic>Reset</button>
+      </div>
+    </div>
+
+    <div class="stats mt-4" id="flatSummary" data-reveal></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" id="flatTable">
+  <div class="container">
+    <div class="table-wrap" data-reveal>
+      <table class="data">
+        <thead><tr><th>Flat No</th><th>Wing</th><th>Floor</th><th>Type</th><th>Super Built Area</th><th>Facing</th><th>Rate</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="flatTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/pdf-helper.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

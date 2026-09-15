@@ -1,0 +1,1358 @@
+Create a complete, professional, premium real-estate property management and inventory website for:
+
+BRAND:
+Future Homes Infra
+
+TAGLINE:
+Building Better Tomorrow
+
+IMPORTANT:
+The website must preserve the functional concept and page structure of the existing Future Homes Infra portal, but redesign the interface into a modern premium Blue + Black + White visual system.
+
+DO NOT copy the old green visual design.
+Use ONLY:
+- Premium Blue
+- Deep Black / Charcoal
+- White
+- Light Grey
+- Very subtle blue gradients where necessary
+
+The website should look like a professional real-estate company portal combined with a property inventory system.
+
+====================================================
+TECHNOLOGY REQUIREMENT
+====================================================
+
+Build the frontend using:
+
+HTML5
+CSS3
+Vanilla JavaScript
+
+The initial website should be usable as independent HTML pages.
+
+DO NOT require React for the basic website.
+
+Do not depend on Tailwind, Bootstrap, React, Vue or Angular.
+
+Each major page should be a separate HTML page.
+
+Use reusable CSS and JavaScript files where possible.
+
+Recommended structure:
+
+/
+├── index.html
+├── projects.html
+├── plot-status.html
+├── flat-status.html
+├── location.html
+├── gallery.html
+├── bank-details.html
+├── emi-calculator.html
+├── contact.html
+├── about.html
+├── privacy-policy.html
+├── terms.html
+├── refund-policy.html
+│
+├── admin/
+│   ├── login.html
+│   ├── dashboard.html
+│   ├── projects.html
+│   ├── plots.html
+│   ├── flats.html
+│   ├── gallery.html
+│   ├── enquiries.html
+│   ├── quotations.html
+│   ├── bank-details.html
+│   ├── reports.html
+│   └── settings.html
+│
+├── css/
+│   └── style.css
+│
+└── js/
+    ├── main.js
+    ├── plots.js
+    ├── flats.js
+    ├── emi.js
+    └── admin.js
+
+
+====================================================
+OVERALL DESIGN
+====================================================
+
+Create a premium real-estate interface.
+
+Color palette:
+
+Primary Blue:
+#146BFF
+
+Deep Blue:
+#0B2A5B
+
+Black:
+#080A0D
+
+Charcoal:
+#11151A
+
+White:
+#FFFFFF
+
+Light Grey:
+#F4F6F8
+
+Border Grey:
+#DDE2E7
+
+The interface should feel:
+
+- Premium
+- Corporate
+- Modern
+- Trustworthy
+- Clean
+- High-end real estate
+- Professional
+- Data-focused
+
+Avoid:
+- Bright green
+- Excessive gradients
+- Cartoonish elements
+- Cheap-looking cards
+- Excessive rounded corners
+- Excessive animations
+- Overloaded dashboard
+- Old Bootstrap-style appearance
+
+
+====================================================
+IMPORTANT VISUAL PRINCIPLE
+====================================================
+
+The website must NOT look like Justdial.
+
+Do not create a generic directory website.
+
+It should feel like a premium real-estate company's own digital property portal.
+
+Use:
+
+- Strong typography
+- Spacious layout
+- Thin borders
+- Premium blue highlights
+- Black/charcoal navigation
+- White content areas
+- Professional tables
+- Clean property cards
+- Modern icons
+- Clear data hierarchy
+
+
+====================================================
+PUBLIC WEBSITE NAVIGATION
+====================================================
+
+Main navigation:
+
+Future Homes Infra Logo
+
+Home
+Projects
+Plot Status
+Flat Status
+Location
+Gallery
+Bank Details
+EMI Calculator
+Contact Us
+
+Login
+
+Use a premium responsive navigation.
+
+Desktop:
+Left or top navigation according to the approved design.
+
+Mobile:
+Hamburger menu.
+
+
+====================================================
+HOME PAGE
+====================================================
+
+Create a premium real-estate homepage.
+
+Hero section:
+
+Future Homes Infra
+
+"More Than Property.
+A Better Future."
+
+Supporting text:
+
+Premium residential plots and modern living spaces in carefully selected locations.
+
+Buttons:
+
+Explore Projects
+View Property Status
+
+Hero should contain a premium real-estate visual area.
+
+Add a property search panel:
+
+PROPERTY SEARCH
+
+Toggle:
+
+Plots
+Flats
+
+Fields:
+
+Select Project
+Select Location
+Area
+Facing
+Budget Range
+
+Button:
+
+Search Property
+
+
+====================================================
+HOME PAGE SUMMARY
+====================================================
+
+Display statistics:
+
+Total Projects
+Total Plots
+Available Plots
+Total Flats
+Available Flats
+Happy Families
+
+These should eventually be dynamic values from the CRM/database.
+
+For the HTML prototype, use demo values.
+
+
+====================================================
+FEATURED PROJECTS
+====================================================
+
+Create:
+
+FEATURED PROJECTS
+
+Each project card should show:
+
+Project Image
+Project Name
+Project Type
+Location
+Project Status
+Starting Price
+Available Units
+
+Buttons:
+
+View Project
+Check Availability
+
+
+Example:
+
+Narmada Residency
+
+Plots & Flats
+
+Prime Location
+
+Ongoing
+
+
+====================================================
+PLOT STATUS PAGE
+====================================================
+
+Create a complete property inventory page based on the existing Future Homes Infra portal.
+
+Heading:
+
+Plot Booking Status Report
+
+Search Criteria:
+
+Project Name
+Plot Type
+Facing
+Area
+Status
+
+Buttons:
+
+View Report
+View Project Map
+Reset
+
+Display summary cards:
+
+Total Plots
+Available
+Booked
+Agreement
+Sale Deed Done
+Pending
+
+Then display a professional data table.
+
+Columns:
+
+Plot No
+Area (Sq.Ft.)
+Plot Type
+Facing
+Rate
+Status
+Action
+
+Status badges:
+
+Available = Blue
+Booked = Black
+Hold = Grey
+Agreement = Dark Blue
+Sale Deed = Black
+
+Actions:
+
+View
+Details
+Quotation
+
+
+====================================================
+PROJECT MAP
+====================================================
+
+Create a Project Map page/view.
+
+Display a simplified interactive plot layout.
+
+Each plot should be represented as a selectable unit.
+
+Example:
+
+A-01
+A-02
+A-03
+A-04
+
+etc.
+
+Status should be visually indicated.
+
+Available
+Booked
+Hold
+Agreement
+
+Clicking a plot should open:
+
+Plot Details
+
+Plot Number
+Area
+Facing
+Type
+Rate
+Status
+
+Buttons:
+
+View Details
+Request Enquiry
+Generate Quotation
+
+
+====================================================
+FLAT STATUS PAGE
+====================================================
+
+Heading:
+
+Flat Booking Status Report
+
+Search Criteria:
+
+Project Name
+Wing
+Floor
+Flat Type
+Facing
+Status
+
+Buttons:
+
+View Report
+Reset
+
+Summary:
+
+Total Flats
+Available
+Booked
+Agreement To Sale
+Sold
+
+Table:
+
+Flat No
+Wing
+Floor
+Super Build Area
+Facing
+Rate
+Status
+Action
+
+Buttons:
+
+View
+Quotation
+Enquire
+
+
+====================================================
+PROJECTS PAGE
+====================================================
+
+Create a premium project listing page.
+
+Filters:
+
+Project Type
+Location
+Status
+Budget
+
+Project cards should display:
+
+Project Name
+Location
+Project Type
+Project Status
+Total Units
+Available Units
+Starting Price
+
+Buttons:
+
+View Details
+View Availability
+
+
+====================================================
+PROJECT DETAIL PAGE
+====================================================
+
+Each project should have:
+
+Project Hero Image
+
+Project Name
+
+Location
+
+Project Description
+
+Project Status
+
+Project Highlights
+
+Amenities
+
+Plot/Flat Availability
+
+Project Specifications
+
+Location Advantages
+
+Gallery
+
+Project Map
+
+Bank Details
+
+Contact / Enquiry
+
+Buttons:
+
+Check Plot Availability
+Check Flat Availability
+Get Quotation
+Contact Sales
+
+
+====================================================
+LOCATION PAGE
+====================================================
+
+Create a premium Location page.
+
+Display:
+
+Project Locations
+
+Project Name
+Address
+City
+State
+Nearby Locations
+Connectivity
+
+Include a map placeholder.
+
+Sections:
+
+Nearby Schools
+Hospitals
+Railway Station
+Airport
+Highways
+Shopping
+Business Areas
+
+Use clean location cards.
+
+
+====================================================
+GALLERY PAGE
+====================================================
+
+Create:
+
+PROJECT GALLERY
+
+Tabs:
+
+All
+Plot Images
+Flat Images
+Construction Updates
+Project Images
+
+Filter by:
+
+Project
+
+Images should open in a lightbox.
+
+Each image can contain:
+
+Project Name
+Category
+Upload Date
+
+
+====================================================
+BANK DETAILS PAGE
+====================================================
+
+Create:
+
+PROJECT WISE BANK DETAILS
+
+Project Type:
+
+Plot Project
+Flat Project
+
+Project:
+
+Select Project
+
+Display:
+
+Account Name
+Account Number
+IFSC
+Bank Name
+Branch
+
+Display QR Code area.
+
+Buttons:
+
+Download
+Share
+
+Important:
+Do not expose sensitive banking information unnecessarily.
+The final production version should support admin-controlled visibility.
+
+
+====================================================
+EMI CALCULATOR PAGE
+====================================================
+
+Create a professional EMI Calculator.
+
+Inputs:
+
+Property Value
+Down Payment
+Loan Amount
+Interest Rate
+Loan Tenure
+
+Button:
+
+Calculate EMI
+
+Output:
+
+Monthly EMI
+Principal Amount
+Total Interest
+Total Payment
+
+Use actual JavaScript EMI calculation.
+
+Also display a simple repayment summary.
+
+Add:
+
+Download Calculation
+Request Property Quotation
+
+
+====================================================
+CONTACT US PAGE
+====================================================
+
+Create:
+
+CONTACT FUTURE HOMES INFRA
+
+Form:
+
+Full Name
+Phone Number
+Email
+Interested In
+Project
+Budget
+Message
+
+Button:
+
+Submit Enquiry
+
+Also show:
+
+Phone
+WhatsApp
+Email
+Office Address
+Business Hours
+
+The form should eventually send the enquiry into the CRM.
+
+
+====================================================
+ABOUT US PAGE
+====================================================
+
+Create a premium corporate About Us page.
+
+Sections:
+
+About Future Homes Infra
+
+Our Vision
+
+Our Mission
+
+Our Values
+
+Why Choose Us
+
+Our Projects
+
+Customer Commitment
+
+Use professional real-estate company language.
+
+Do not invent factual claims in the final production version.
+Use placeholder text where actual company information is not provided.
+
+
+====================================================
+LEGAL PAGES
+====================================================
+
+Create separate pages:
+
+Privacy Policy
+Terms & Conditions
+Refund & Cancellation Policy
+
+These pages should have clean readable typography.
+
+Include:
+
+Privacy Policy
+Information Collection
+Data Usage
+Cookies
+Data Security
+Third Party Services
+User Rights
+Contact Information
+
+Terms:
+Website Usage
+Property Information
+Pricing
+Availability
+Enquiries
+Payments
+Intellectual Property
+Limitation of Liability
+
+Refund:
+Booking Cancellation
+Refund Eligibility
+Processing
+Administrative Charges
+Exceptions
+Contact
+
+Important:
+These are templates only.
+Final legal content must be reviewed and approved by the client/legal professional.
+
+
+====================================================
+ADMIN PANEL
+====================================================
+
+This is one of the MOST IMPORTANT parts.
+
+Create a completely separate premium Admin Panel.
+
+Admin login:
+
+Username
+Password
+
+Remember Me
+
+Login
+
+
+====================================================
+ADMIN DASHBOARD
+====================================================
+
+After login display:
+
+TOTAL PROJECTS
+TOTAL PLOTS
+AVAILABLE PLOTS
+BOOKED PLOTS
+TOTAL FLATS
+AVAILABLE FLATS
+NEW ENQUIRIES
+PENDING FOLLOWUPS
+
+Also display:
+
+Recent Enquiries
+
+Recent Bookings
+
+Recent Payments
+
+Recent Activities
+
+Inventory Summary
+
+Sales Summary
+
+
+====================================================
+PROJECT MANAGEMENT
+====================================================
+
+Admin can:
+
+Add Project
+Edit Project
+Delete/Archive Project
+View Project
+
+Fields:
+
+Project Name
+Project Type
+Location
+Address
+Description
+Status
+Starting Price
+Project Images
+Map
+Amenities
+Contact Details
+
+
+====================================================
+PLOT MANAGEMENT
+====================================================
+
+Admin must be able to:
+
+Add Plot
+Edit Plot
+Change Status
+Delete/Archive Plot
+Search Plot
+Filter Plot
+
+Fields:
+
+Project
+Plot Number
+Area
+Plot Type
+Facing
+Rate
+Status
+Notes
+
+Status:
+
+Available
+Booked
+Hold
+Agreement
+Sale Deed
+
+
+====================================================
+BULK PLOT UPLOAD
+====================================================
+
+Very important.
+
+Admin should have:
+
+UPLOAD PLOT INVENTORY
+
+Project
+
+Choose Excel File
+
+Download Excel Template
+
+Validate File
+
+Import Data
+
+The interface should support bulk inventory upload.
+
+Example columns:
+
+Plot Number
+Area
+Plot Type
+Facing
+Rate
+Status
+
+Show:
+
+Total Rows
+Valid Rows
+Invalid Rows
+Duplicate Rows
+
+Buttons:
+
+Validate
+Import
+
+
+====================================================
+FLAT MANAGEMENT
+====================================================
+
+Admin can:
+
+Add Flat
+Edit Flat
+Change Status
+Archive Flat
+
+Fields:
+
+Project
+Wing
+Floor
+Flat Number
+Flat Type
+Super Build Area
+Carpet Area
+Facing
+Rate
+Status
+
+
+====================================================
+BULK FLAT UPLOAD
+====================================================
+
+Support Excel/CSV style inventory import.
+
+Columns:
+
+Project
+Wing
+Floor
+Flat Number
+Flat Type
+Area
+Facing
+Rate
+Status
+
+
+====================================================
+GALLERY MANAGEMENT
+====================================================
+
+Admin can:
+
+Upload Images
+Select Project
+Select Category
+Add Caption
+Delete Image
+Replace Image
+
+Categories:
+
+Plot Images
+Flat Images
+Project Images
+Construction Updates
+
+
+====================================================
+ENQUIRY MANAGEMENT
+====================================================
+
+This is another critical feature.
+
+Every website enquiry should appear in Admin Panel.
+
+Table:
+
+Customer Name
+Phone
+Email
+Interested In
+Project
+Budget
+Date
+Assigned Executive
+Status
+Action
+
+Statuses:
+
+New
+Contacted
+Interested
+Site Visit
+Negotiation
+Quotation
+Booked
+Not Interested
+Closed
+
+Actions:
+
+View
+Call
+WhatsApp
+Assign
+Change Status
+Add Note
+
+
+====================================================
+QUOTATION MANAGEMENT
+====================================================
+
+Admin/Sales Executive can create:
+
+Plot Quotation
+Flat Quotation
+
+Fields:
+
+Customer
+Project
+Plot/Flat
+Area
+Rate
+Base Price
+Other Charges
+Discount
+Final Amount
+
+Buttons:
+
+Calculate
+Generate Quotation
+Download PDF
+Share
+Send to Customer
+
+
+====================================================
+BANK DETAILS MANAGEMENT
+====================================================
+
+Admin can:
+
+Add Bank Details
+Edit Bank Details
+Upload QR Code
+Set Visibility
+Delete/Archive
+
+
+====================================================
+REPORTS
+====================================================
+
+Admin reports:
+
+Plot Inventory Report
+Flat Inventory Report
+Booking Report
+Available Inventory
+Sales Report
+Enquiry Report
+Quotation Report
+Payment Report
+
+Filters:
+
+Project
+Date
+Status
+Executive
+
+Export:
+
+Excel
+PDF
+
+
+====================================================
+USER MANAGEMENT
+====================================================
+
+Admin can create users:
+
+Super Admin
+Admin
+Sales Executive
+Finance
+Viewer
+
+Each role must have controlled permissions.
+
+Example:
+
+Sales Executive:
+View inventory
+Create quotation
+View enquiries
+
+Finance:
+Payment
+Bank details
+Receipts
+
+Admin:
+Full access
+
+
+====================================================
+DATA ARCHITECTURE
+====================================================
+
+VERY IMPORTANT:
+
+Do not store live inventory data permanently inside HTML.
+
+HTML is only the presentation layer.
+
+Final architecture should be:
+
+HTML
+↓
+JavaScript
+↓
+API
+↓
+CRM Backend
+↓
+Database
+
+Admin changes data in CRM.
+
+Example:
+
+Admin changes:
+
+Plot A-101
+Available → Booked
+
+Database updates.
+
+Public Plot Status page automatically displays:
+
+A-101 = Booked
+
+WITHOUT uploading the HTML page again.
+
+
+====================================================
+HTML-FIRST REQUIREMENT
+====================================================
+
+The public pages must work independently as HTML pages.
+
+Use JavaScript for:
+
+Filtering
+Searching
+EMI calculation
+Modal dialogs
+Gallery lightbox
+Navigation
+Form validation
+Inventory interaction
+
+Do not put large amounts of hard-coded business data inside the HTML.
+
+Use sample/demo data for the prototype.
+
+Clearly structure the JavaScript so that API endpoints can later replace demo data.
+
+
+====================================================
+RESPONSIVE DESIGN
+====================================================
+
+Desktop
+Laptop
+Tablet
+Mobile
+
+must all be supported.
+
+On mobile:
+
+Sidebar becomes hamburger menu.
+
+Tables become horizontally scrollable or responsive cards.
+
+Forms become single-column.
+
+Project cards become one-column.
+
+
+====================================================
+SECURITY
+====================================================
+
+Never store:
+
+Passwords
+API keys
+Database credentials
+
+inside public HTML.
+
+Admin authentication must eventually be handled by the backend.
+
+Frontend must not directly access the database.
+
+Use API authentication for production.
+
+
+====================================================
+UI COMPONENTS
+====================================================
+
+Use:
+
+Premium cards
+Data tables
+Status badges
+Dropdowns
+Search fields
+Filter panels
+Modal windows
+Confirmation dialogs
+Toast notifications
+Pagination
+Breadcrumbs
+Tabs
+Buttons
+Empty states
+Loading states
+
+
+====================================================
+DESIGN LANGUAGE
+====================================================
+
+Use:
+
+Blue highlights
+Black/charcoal navigation
+White cards
+Thin borders
+Professional shadows
+Subtle hover animations
+Premium typography
+
+Buttons:
+
+Primary:
+Blue
+
+Secondary:
+White with blue border
+
+Danger:
+Black/red only where necessary
+
+Do not use excessive rounded pill buttons.
+
+Keep the UI sophisticated and corporate.
+
+
+====================================================
+FOOTER
+====================================================
+
+Footer should contain:
+
+Future Homes Infra
+
+Quick Links
+
+Projects
+Plot Status
+Flat Status
+Location
+Gallery
+EMI Calculator
+Contact Us
+
+Company:
+
+About Us
+Careers
+Contact
+
+Legal:
+
+Privacy Policy
+Terms & Conditions
+Refund & Cancellation Policy
+
+Social:
+
+Facebook
+Instagram
+Google
+
+Contact:
+
+Phone
+WhatsApp
+Email
+
+Copyright:
+
+© 2026 Future Homes Infra
+All Rights Reserved.
+
+
+====================================================
+IMPORTANT IMPLEMENTATION RULE
+====================================================
+
+Generate clean, production-quality HTML/CSS/JavaScript.
+
+Do not create only a visual mockup.
+
+Every button that can logically work in a frontend prototype should have a working interaction.
+
+For example:
+
+Search → filters demo data
+EMI Calculator → calculates EMI
+Gallery → opens images
+Navigation → opens pages
+Enquiry → validates form
+Project → opens project details
+Plot → opens details
+Flat → opens details
+Admin → opens admin login
+Logout → returns to login
+
+For features requiring backend/database, clearly create the frontend structure and JavaScript API placeholders.
+
+====================================================
+FINAL GOAL
+====================================================
+
+The final result should feel like:
+
+A premium real-estate website
++
+Property Inventory Portal
++
+Sales Enquiry System
++
+Quotation System
++
+Admin Management System
+
+while remaining HTML/CSS/JavaScript based on the frontend.
+
+The design must be significantly more premium and modern than the old Future Homes Infra portal while preserving its core business functionality.

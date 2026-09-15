@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Future Homes Infra</title>
+<meta name="description" content="Explore premium residential plots and flats by Future Homes Infra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="projects">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><span>Projects</span></nav>
+    <h1 data-reveal data-reveal-delay="1">Our Projects</h1>
+    <p data-reveal data-reveal-delay="2">A curated portfolio of residential plots and apartments, each verified for legal clarity and long-term value.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="filter-bar" data-reveal>
+      <div class="field">
+        <label for="pfType">Project Type</label>
+        <select class="select" id="pfType"><option value="">All Types</option><option>Plots</option><option>Flats</option><option>Plots &amp; Flats</option></select>
+      </div>
+      <div class="field">
+        <label for="pfLocation">Location</label>
+        <select class="select" id="pfLocation"><option value="">All Locations</option></select>
+      </div>
+      <div class="field">
+        <label for="pfStatus">Status</label>
+        <select class="select" id="pfStatus"><option value="">All Status</option><option>Ongoing</option><option>Ready to Move</option><option>Under Construction</option></select>
+      </div>
+      <div class="field">
+        <label for="pfBudget">Budget</label>
+        <select class="select" id="pfBudget"><option value="">Any Budget</option><option value="0-1000000">Below 10 Lakh</option><option value="1000000-2000000">10L - 20L</option><option value="2000000-3000000">20L - 30L</option><option value="3000000-99999999">Above 30L</option></select>
+      </div>
+      <div class="filter-actions">
+        <button class="btn btn--ghost" type="button" id="pfReset" data-magnetic>Reset</button>
+      </div>
+    </div>
+
+    <div class="grid grid-3 mt-4" id="projectsGrid"></div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

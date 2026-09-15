@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Details | Future Homes Infra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="bank-details">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><span>Bank Details</span></nav>
+    <h1 data-reveal data-reveal-delay="1">Project Wise Bank Details</h1>
+    <p data-reveal data-reveal-delay="2">Official collection accounts for each project. Always verify details with the sales office before transferring funds.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container split">
+    <div data-reveal>
+      <div class="form-grid">
+        <div class="field">
+          <label for="bankType">Project Type</label>
+          <select class="select" id="bankType"><option value="">All Types</option><option>Plot Project</option><option>Flat Project</option></select>
+        </div>
+        <div class="field">
+          <label for="bankProject">Select Project</label>
+          <select class="select" id="bankProject"></select>
+        </div>
+      </div>
+      <div class="note" style="margin-top:22px;padding:18px;border-left:3px solid var(--blue);background:var(--grey);border-radius:0 10px 10px 0;font-size:.88rem;color:var(--muted)">
+        Payments are accepted only through the verified accounts listed here. Do not transfer funds to any personal account. Please share the transaction reference with your executive.
+      </div>
+    </div>
+    <div class="bank-card" id="bankCard" data-reveal></div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

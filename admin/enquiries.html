@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquiries | Future Homes Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-body" data-admin="enquiries" data-title="Enquiry Management" data-sub="Every website enquiry in one inbox" data-wa="off">
+
+<div class="admin-shell" id="adminShell">
+  <aside class="admin-side" id="adminSide"></aside>
+  <div class="admin-main">
+    <header class="admin-top" id="adminTop"></header>
+    <main class="admin-content">
+      <div class="admin-page-head">
+        <div><h1>Enquiries</h1><p>Track status, assign executives, call or WhatsApp customers directly.</p></div>
+        <select class="select" id="enqExecFilter" style="width:200px"></select>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><h3>Enquiry Pipeline</h3><select class="select" id="enqStatusFilter" style="width:200px"></select></div>
+        <div class="table-wrap" style="border:none;border-radius:0">
+          <table class="data" style="min-width:1040px">
+            <thead><tr><th>Customer</th><th>Phone</th><th>Interested In</th><th>Project</th><th>Budget</th><th>Date</th><th>Executive</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="adminEnquiriesBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="admin-backdrop"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Future Homes Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-body" data-admin="gallery" data-title="Gallery Management" data-sub="Upload and organise project images" data-wa="off">
+
+<div class="admin-shell" id="adminShell">
+  <aside class="admin-side" id="adminSide"></aside>
+  <div class="admin-main">
+    <header class="admin-top" id="adminTop"></header>
+    <main class="admin-content">
+      <div class="admin-page-head">
+        <div><h1>Gallery</h1><p>Images are grouped by project and category for the public gallery.</p></div>
+        <button class="btn btn--primary btn--sm" id="galUpload" data-magnetic>Upload Image</button>
+      </div>
+      <div class="panel">
+        <div class="panel__head"><h3>All Images</h3></div>
+        <div class="table-wrap" style="border:none;border-radius:0">
+          <table class="data">
+            <thead><tr><th>Preview</th><th>Title</th><th>Project</th><th>Category</th><th>Uploaded</th><th>Action</th></tr></thead>
+            <tbody id="adminGalleryBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="admin-backdrop"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

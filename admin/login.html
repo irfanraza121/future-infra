@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login | Future Homes Infra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-body" data-admin="login" data-wa="off">
+
+<div class="login-shell">
+  <div class="login-visual">
+    <span class="hero__grid"></span>
+    <span class="hero__orb hero__orb--1"></span>
+    <span class="hero__orb hero__orb--2"></span>
+    <div class="login-visual__content">
+      <a class="fh-nav__brand" href="../index.html" style="margin-bottom:28px"><span class="fh-nav__logo">FH</span><span><b>Future Homes Infra</b><span>Admin Console</span></span></a>
+      <h2>Manage inventory, enquiries and quotations from one console.</h2>
+      <p>Role-based access for administrators, sales executives and finance teams. Every change reflects instantly on the public website.</p>
+      <div class="stats mt-3" style="grid-template-columns:1fr 1fr;max-width:420px">
+        <div class="stat"><b>5</b><span>Projects</span></div>
+        <div class="stat"><b>200+</b><span>Units Tracked</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="login-form-side">
+    <form class="login-form" id="adminLogin" novalidate>
+      <a class="fh-nav__brand" href="../index.html" style="margin-bottom:26px;display:flex"><span class="fh-nav__logo">FH</span><span><b style="color:var(--text)">Future Homes Infra</b><span style="color:var(--muted)">Admin Console</span></span></a>
+      <h1>Sign in</h1>
+      <p class="muted" style="font-size:.9rem">Enter your credentials to access the admin panel.</p>
+      <div class="form-grid" style="margin-top:18px">
+        <div class="field"><label for="loginRole">Login As</label><select class="select" id="loginRole"><option value="Auto">Auto Detect</option><option>Super Admin</option><option>Admin</option><option>Sales Executive</option><option>Finance</option><option>Viewer</option></select></div>
+        <div class="field"><label for="loginUser">Username</label><input class="input" id="loginUser" type="text" placeholder="admin" autocomplete="username"></div>
+        <div class="field"><label for="loginPass">Password</label><input class="input" id="loginPass" type="password" placeholder="••••••••" autocomplete="current-password"></div>
+        <label class="checkbox"><input type="checkbox" checked><span>Remember me on this device</span></label>
+        <button class="btn btn--primary btn--lg btn--block" type="submit" data-magnetic>Login</button>
+      </div>
+      <p class="muted mt-3" style="font-size:.8rem"><a href="../index.html" style="color:var(--blue)">&larr; Back to website</a></p>
+    </form>
+  </div>
+</div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

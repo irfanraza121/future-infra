@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plot Booking Status | Future Homes Infra</title>
+<meta name="description" content="Live plot booking status report across all Future Homes Infra projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="plot-status">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><span>Plot Status</span></nav>
+    <h1 data-reveal data-reveal-delay="1">Plot Booking Status Report</h1>
+    <p data-reveal data-reveal-delay="2">Real-time inventory of every plot - availability, booking, agreement and sale deed status.</p>
+  </div>
+</header>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="filter-bar" data-reveal>
+      <div class="field"><label for="psProject">Project Name</label><select class="select" id="psProject"><option value="">All Projects</option></select></div>
+      <div class="field"><label for="psType">Plot Type</label><select class="select" id="psType"><option value="">All Types</option><option>Regular</option><option>Corner</option><option>Premium</option></select></div>
+      <div class="field"><label for="psFacing">Facing</label><select class="select" id="psFacing"><option value="">Any Facing</option><option>East</option><option>West</option><option>North</option><option>South</option><option>North-East</option><option>South-West</option></select></div>
+      <div class="field"><label for="psArea">Area (Sq.Ft.)</label><select class="select" id="psArea"><option value="">Any Area</option><option value="0-1000">Up to 1000</option><option value="1000-1500">1000 - 1500</option><option value="1500-2000">1500 - 2000</option><option value="2000-99999">Above 2000</option></select></div>
+      <div class="field"><label for="psStatus">Status</label><select class="select" id="psStatus"><option value="">All Status</option><option>Available</option><option>Booked</option><option>Hold</option><option>Agreement</option><option>Sale Deed</option></select></div>
+      <div class="filter-actions">
+        <button class="btn btn--primary" type="button" data-magnetic>View Report</button>
+        <a class="btn btn--ghost" href="#projectMap" data-no-transition data-magnetic>View Project Map</a>
+        <button class="btn btn--ghost" type="button" id="psReset" data-magnetic>Reset</button>
+      </div>
+    </div>
+
+    <div class="stats mt-4" id="plotSummary" data-reveal></div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0" id="plotTable">
+  <div class="container">
+    <div class="table-wrap" data-reveal>
+      <table class="data">
+        <thead><tr><th>Plot No</th><th>Area (Sq.Ft.)</th><th>Plot Type</th><th>Facing</th><th>Rate</th><th>Status</th><th>Action</th></tr></thead>
+        <tbody id="plotTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section--dark" id="projectMap" style="padding-top:70px">
+  <div class="container">
+    <div class="section-head" style="margin-bottom:30px">
+      <span class="kicker">Interactive Layout</span>
+      <h2 class="section-dark-heading">Project Map</h2>
+      <p class="section-dark-lead">Click any unit to view plot details. Colours indicate booking status.</p>
+    </div>
+    <div class="plot-map" id="plotMap" data-reveal></div>
+    <div class="map-legend">
+      <span><i class="leg-available"></i>Available</span>
+      <span><i class="leg-booked"></i>Booked</span>
+      <span><i class="leg-hold"></i>Hold</span>
+      <span><i class="leg-agreement"></i>Agreement</span>
+      <span><i class="leg-saledeed"></i>Sale Deed</span>
+    </div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="js/pdf-helper.js"></script>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

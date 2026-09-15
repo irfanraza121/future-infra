@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Future Homes Infra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="gallery">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><span>Gallery</span></nav>
+    <h1 data-reveal data-reveal-delay="1">Project Gallery</h1>
+    <p data-reveal data-reveal-delay="2">Project visuals, plot layouts, apartment interiors and construction progress updates.</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="flex-between" style="margin-bottom:22px">
+      <div class="tabs" id="galleryTabs" style="margin-bottom:0;border-bottom:none"></div>
+      <div class="field" style="min-width:220px">
+        <label for="galleryProject">Filter by Project</label>
+        <select class="select" id="galleryProject"><option value="">All Projects</option></select>
+      </div>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

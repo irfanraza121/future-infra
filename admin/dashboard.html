@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Future Homes Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-body" data-admin="dashboard" data-title="Dashboard" data-sub="Overview of inventory, sales and enquiries" data-wa="off">
+
+<div class="admin-shell" id="adminShell">
+  <aside class="admin-side" id="adminSide"></aside>
+  <div class="admin-main">
+    <header class="admin-top" id="adminTop"></header>
+    <main class="admin-content">
+      <div class="admin-page-head">
+        <div><h1>Dashboard</h1><p>A live snapshot of projects, inventory and sales activity.</p></div>
+        <a class="btn btn--primary btn--sm" href="plots.html" data-magnetic>Manage Inventory</a>
+      </div>
+
+      <div class="admin-cards" id="adminStats"></div>
+
+      <div class="admin-grid-2 mt-3">
+        <div class="panel">
+          <div class="panel__head"><h3>Recent Enquiries</h3><a class="btn btn--link" href="enquiries.html">View all</a></div>
+          <div class="table-wrap" style="border:none;border-radius:0">
+            <table class="data" style="min-width:520px">
+              <thead><tr><th>Customer</th><th>Project</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody id="recentEnquiries"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><h3>Recent Activities</h3></div>
+          <div class="panel__body activity" id="recentActivity"></div>
+        </div>
+      </div>
+
+      <div class="admin-grid-2 mt-3">
+        <div class="panel">
+          <div class="panel__head"><h3>Inventory Summary</h3><a class="btn btn--link" href="reports.html">Reports</a></div>
+          <div class="panel__body progress-list" id="inventorySummary"></div>
+        </div>
+        <div class="panel">
+          <div class="panel__head"><h3>Sales Summary</h3></div>
+          <div class="panel__body" id="salesSummary"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="admin-backdrop"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>

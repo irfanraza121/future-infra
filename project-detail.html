@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Project Details | Future Homes Infra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="project-detail">
+
+<div id="fh-nav"></div>
+
+<header class="page-hero">
+  <div class="container page-hero__inner">
+    <nav class="breadcrumbs" data-reveal><a href="index.html">Home</a><span class="sep">/</span><a href="projects.html">Projects</a><span class="sep">/</span><span id="pdCrumb">Project</span></nav>
+    <h1 id="pdName" data-reveal data-reveal-delay="1">Project</h1>
+    <p id="pdLocation" data-reveal data-reveal-delay="2"></p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:26px" data-reveal data-reveal-delay="3">
+      <a class="btn btn--primary" href="plot-status.html" data-magnetic>Check Plot Availability</a>
+      <a class="btn btn--light" href="flat-status.html" data-magnetic>Check Flat Availability</a>
+      <a class="btn btn--light" href="contact.html#enquiry" data-magnetic>Contact Sales</a>
+    </div>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container">
+    <div class="split">
+      <div class="split__media">
+        <div class="art art--blue" id="pdArt" style="aspect-ratio:4/3;border-radius:var(--radius-lg);font-size:2rem">Project</div>
+      </div>
+      <div class="prose" id="projectDetail" data-reveal></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--grey">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="kicker">Gallery</span>
+      <h2>Project gallery</h2>
+      <p>A selection of visuals from this development.</p>
+    </div>
+    <div class="gallery-grid" id="galleryGrid"></div>
+    <div class="text-center mt-4"><a class="btn btn--ghost" href="gallery.html" data-magnetic>Open Full Gallery</a></div>
+  </div>
+</section>
+
+<div id="fh-footer"></div>
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flat Management | Future Homes Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body class="admin-body" data-admin="flats" data-title="Flat Management" data-sub="Wing, floor and unit status" data-wa="off">
+
+<div class="admin-shell" id="adminShell">
+  <aside class="admin-side" id="adminSide"></aside>
+  <div class="admin-main">
+    <header class="admin-top" id="adminTop"></header>
+    <main class="admin-content">
+      <div class="admin-page-head">
+        <div><h1>Flat Management</h1><p>Manage apartment inventory across wings and floors.</p></div>
+        <button class="btn btn--primary btn--sm" id="addFlat" data-magnetic>Add Flat</button>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head">
+          <h3>Flat Inventory</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <input class="input" id="flatSearch" placeholder="Search flat no or project" style="width:220px">
+            <select class="select" id="flatFilter" style="width:180px"></select>
+            <select class="select" id="flatStatusFilter" style="width:150px"></select>
+          </div>
+        </div>
+        <div class="table-wrap" style="border:none;border-radius:0">
+          <table class="data">
+            <thead><tr><th>Flat No</th><th>Project</th><th>Area</th><th>Type</th><th>Facing</th><th>Rate</th><th>Status</th><th>Action</th></tr></thead>
+            <tbody id="adminFlatsBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="panel mt-3">
+        <div class="panel__head"><h3>Upload Flat Inventory</h3><button class="btn btn--ghost btn--sm" id="flatTemplate">Download Excel Template</button></div>
+        <div class="panel__body">
+          <form id="flatBulkForm" class="form-grid">
+            <div class="field"><label for="bulkProjectFlat">Project</label><select class="select" id="bulkProjectFlat"></select></div>
+            <div class="dropzone" id="flatDrop">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 16V4m0 0L8 8m4-4 4 4"/><path d="M4 16v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-2"/></svg>
+              <p style="margin:0"><b>Choose a CSV / Excel-exported file</b></p>
+              <small class="muted">Columns: Wing, Floor, Flat Number, Flat Type, Area, Facing, Rate, Status</small>
+              <input type="file" id="flatBulkFile" accept=".csv,.txt,.xls,.xlsx" hidden>
+            </div>
+          </form>
+          <div class="mt-3" id="flatBulkStats"></div>
+          <div class="mt-3" style="display:flex;gap:10px;flex-wrap:wrap">
+            <button class="btn btn--ghost" type="button" id="flatValidate" data-magnetic>Validate File</button>
+            <button class="btn btn--primary" type="button" id="flatImport" data-magnetic>Import Data</button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<div class="admin-backdrop"></div>
+
+<script src="../js/data.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
+</body>
+</html>
