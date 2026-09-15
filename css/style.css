@@ -173,7 +173,7 @@ input, select, textarea { font-family: inherit; font-size: 1rem; touch-action: m
   place-items: center;
   transition: opacity 0.6s ease, visibility 0.6s;
 }
-.fh-loader.is-done { opacity: 0; visibility: hidden; }
+.fh-loader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
 .fh-loader__mark {
   width: 62px; height: 62px;
   border-radius: 16px;
@@ -940,12 +940,11 @@ table.data .actions { display: flex; gap: 8px; flex-wrap: wrap; }
   transform: translateY(26px);
   transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
   will-change: opacity, transform;
-  pointer-events: none;    /* prevent invisible layer absorbing touch events */
+  /* NOTE: pointer-events intentionally NOT disabled so mobile taps always work */
 }
 [data-reveal].is-in {
   opacity: 1;
   transform: none;
-  pointer-events: auto;   /* restore after reveal */
 }
 [data-reveal-delay="1"] { transition-delay: 0.08s; }
 [data-reveal-delay="2"] { transition-delay: 0.16s; }

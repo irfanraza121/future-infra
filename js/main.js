@@ -292,7 +292,12 @@
   /* ------------------------------------------------------------------ */
   function initReveal() {
     var items = document.querySelectorAll("[data-reveal]");
-    /* Immediately reveal items already in viewport on load (important for mobile) */
+    /* On touch / mobile — reveal everything immediately so no element is ever hidden */
+    if ('ontouchstart' in window || window.innerWidth <= 1080) {
+      items.forEach(function (i) { i.classList.add("is-in"); });
+      return;
+    }
+    /* Immediately reveal items already in viewport on load */
     items.forEach(function (i) {
       var rect = i.getBoundingClientRect();
       if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -429,14 +434,21 @@
   }
 
   function initPreloader() {
+    /* Always clear no-scroll on load to prevent frozen pages (especially mobile) */
+    document.body.classList.remove("no-scroll");
     var el = document.createElement("div");
     el.className = "fh-loader";
     el.innerHTML = '<div class="fh-loader__mark">FH</div>';
     document.body.appendChild(el);
+    function done() {
+      el.classList.add("is-done");
+      document.body.classList.remove("no-scroll");
+    }
     window.addEventListener("load", function () {
-      setTimeout(function () { el.classList.add("is-done"); }, 260);
+      setTimeout(done, 260);
     });
-    setTimeout(function () { el.classList.add("is-done"); }, 2200);
+    /* Hard fallback: always hide after 1.5s no matter what */
+    setTimeout(done, 1500);
   }
 
   /* ------------------------------------------------------------------ */
