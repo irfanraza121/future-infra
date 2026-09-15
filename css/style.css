@@ -85,7 +85,7 @@ input, select, textarea { font-family: inherit; font-size: 1rem; touch-action: m
   top: 0;
   left: 0;
   pointer-events: none;
-  z-index: 99999;
+  z-index: 9999999;
   border-radius: 50%;
   transform: translate(-50%, -50%);
   mix-blend-mode: difference;
@@ -505,7 +505,7 @@ select option, .search-panel .select option { color: #0f172a !important; backgro
   border-radius: 12px;
   padding: 6px;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.15);
-  z-index: 800000 !important;
+  z-index: 9999000 !important;
   max-height: 260px;
   overflow-y: auto;
   opacity: 0;

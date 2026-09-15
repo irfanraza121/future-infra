@@ -308,8 +308,13 @@
 
       function positionDropdown() {
         var rect = trigger.getBoundingClientRect();
+        var spaceBelow = window.innerHeight - rect.bottom;
+        var dropH = Math.min(260, selectEl.options.length * 42 + 12);
+        var topPos = (spaceBelow < dropH + 8 && rect.top > dropH + 8)
+          ? (rect.top - dropH - 4)
+          : (rect.bottom + 4);
         dropdown.style.position = "fixed";
-        dropdown.style.top  = (rect.bottom + 4) + "px";
+        dropdown.style.top  = topPos + "px";
         dropdown.style.left = rect.left + "px";
         dropdown.style.width = rect.width + "px";
         dropdown.style.zIndex = "2147483647";
@@ -318,13 +323,7 @@
       }
 
       function resetDropdown() {
-        dropdown.style.position = "";
-        dropdown.style.top = "";
-        dropdown.style.left = "";
-        dropdown.style.width = "";
-        dropdown.style.zIndex = "";
-        dropdown.style.maxHeight = "";
-        dropdown.style.overflowY = "";
+        dropdown.style.cssText = "";
       }
 
       function selectItem(opt, item, e) {
@@ -382,6 +381,15 @@
           positionDropdown();
           wrapper.classList.add("is-open");
           dropdown.classList.add("is-open");
+          /* reposition on scroll while open */
+          function onScrollReposition() {
+            if (wrapper.classList.contains("is-open")) {
+              positionDropdown();
+            } else {
+              window.removeEventListener("scroll", onScrollReposition, true);
+            }
+          }
+          window.addEventListener("scroll", onScrollReposition, true);
         }
       }
 
