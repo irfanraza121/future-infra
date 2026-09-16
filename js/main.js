@@ -247,46 +247,8 @@
   /* Page transitions                                                   */
   /* ------------------------------------------------------------------ */
   function initTransition() {
-    if ('ontouchstart' in window || window.innerWidth <= 1080) return;
-    var el = document.createElement("div");
-    el.className = "fh-transition";
-    el.innerHTML = '<div class="fh-transition__panel"></div><div class="fh-transition__panel"></div><div class="fh-transition__panel"></div><div class="fh-transition__panel"></div><div class="fh-transition__panel"></div><div class="fh-transition__brand">' + C.brand + "</div>";
-    document.body.appendChild(el);
-
-    function resetTransition() {
-      el.classList.remove("is-active");
-      document.body.classList.remove("no-scroll");
-    }
-
-    /* Safety resets — multiple events to handle mobile bfcache and back nav */
-    window.addEventListener("pageshow", resetTransition);
-    window.addEventListener("popstate", resetTransition);
-    /* Always reset on DOMContentLoaded — catches stuck overlays from prev page */
-    resetTransition();
-    /* Belt-and-suspenders: hard reset after 1.5s no matter what */
-    setTimeout(resetTransition, 1500);
-
-    document.addEventListener("click", function (e) {
-      var a = e.target.closest("a");
-      if (!a) return;
-      var href = a.getAttribute("href");
-      if (!href || a.target === "_blank" || a.hasAttribute("download") || a.dataset.noTransition !== undefined) return;
-      if (href.indexOf("#") !== -1 || /^(mailto:|tel:|https?:)/.test(href)) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
-
-      // Check if target page is current page
-      var currentPath = window.location.pathname.split("/").pop() || "index.html";
-      var targetPath = href.split("#")[0].split("?")[0];
-      if (targetPath === currentPath) return;
-
-      e.preventDefault();
-      el.classList.add("is-active");
-      document.body.classList.add("no-scroll");
-      
-      // Auto cleanup timer to prevent permanent freezing
-      setTimeout(resetTransition, 900);
-      setTimeout(function () { window.location.href = href; }, 430);
-    });
+    /* Intentionally disabled to ensure standard browser navigation and prevent full-screen z-index overlay freezing */
+    document.body.classList.remove("no-scroll");
   }
 
   /* ------------------------------------------------------------------ */
@@ -437,21 +399,8 @@
   }
 
   function initPreloader() {
-    /* Always clear no-scroll on load to prevent frozen pages (especially mobile) */
+    /* Disabled: prevent full-screen fixed loader overlay from sitting on top of mobile viewports */
     document.body.classList.remove("no-scroll");
-    var el = document.createElement("div");
-    el.className = "fh-loader";
-    el.innerHTML = '<div class="fh-loader__mark">FH</div>';
-    document.body.appendChild(el);
-    function done() {
-      el.classList.add("is-done");
-      document.body.classList.remove("no-scroll");
-    }
-    window.addEventListener("load", function () {
-      setTimeout(done, 260);
-    });
-    /* Hard fallback: always hide after 1.5s no matter what */
-    setTimeout(done, 1500);
   }
 
   /* ------------------------------------------------------------------ */
@@ -550,7 +499,21 @@
   /* ------------------------------------------------------------------ */
   /* Boot                                                               */
   /* ------------------------------------------------------------------ */
+  function resetBodyScroll() {
+    document.body.classList.remove("no-scroll");
+    var nav = document.querySelector(".fh-nav");
+    if (nav) nav.classList.remove("is-open");
+    var drawer = document.getElementById("fhNavDrawer");
+    if (drawer) drawer.classList.remove("is-open");
+    var backdrop = document.getElementById("fhNavBackdrop");
+    if (backdrop) backdrop.classList.remove("is-open");
+  }
+
+  window.addEventListener("pageshow", resetBodyScroll);
+  window.addEventListener("popstate", resetBodyScroll);
+
   function boot() {
+    resetBodyScroll();
     buildNav();
     buildFooter();
     initTheme();

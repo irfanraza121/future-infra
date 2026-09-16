@@ -172,9 +172,6 @@
         updateHeroSelects(kind);
       }
       toggle.addEventListener("click", switchTab);
-      toggle.addEventListener("pointerdown", function (e) {
-        if (e.pointerType === "touch") switchTab(e);
-      });
     }
     var form = $("#heroSearch");
     if (form) form.addEventListener("submit", function (e) {
@@ -266,6 +263,7 @@
   }
 
   function initCustomSelects(scope) {
+    if ('ontouchstart' in window || window.innerWidth <= 1080) return;
     scope = scope || document;
     $$(".select", scope).forEach(function (selectEl) {
       if (selectEl.closest("#adminModal") || selectEl.closest("#unitModal") || selectEl.closest(".admin-main")) return;

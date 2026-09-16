@@ -120,11 +120,8 @@ input, select, textarea { font-family: inherit; font-size: 1rem; touch-action: m
 
 /* ---------- Page Transition Overlay ---------- */
 .fh-transition {
-  position: fixed;
-  inset: 0;
-  z-index: 100000;
-  pointer-events: none;
-  display: none;
+  display: none !important;
+  pointer-events: none !important;
 }
 .fh-transition.is-active { display: flex; pointer-events: all; }
 .fh-transition__panel {
@@ -165,15 +162,9 @@ input, select, textarea { font-family: inherit; font-size: 1rem; touch-action: m
 
 /* ---------- Preloader ---------- */
 .fh-loader {
-  position: fixed;
-  inset: 0;
-  z-index: 100001;
-  background: var(--black);
-  display: grid;
-  place-items: center;
-  transition: opacity 0.6s ease, visibility 0.6s;
+  display: none !important;
+  pointer-events: none !important;
 }
-.fh-loader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
 .fh-loader__mark {
   width: 62px; height: 62px;
   border-radius: 16px;
@@ -1093,25 +1084,24 @@ table.data .actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .fh-nav__backdrop {
   display: none !important;
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   height: 100vh;
   width: 100vw;
-  background: rgba(0, 0, 0, 0);
-  backdrop-filter: blur(0px);
-  -webkit-backdrop-filter: blur(0px);
-  z-index: 2147483646 !important;
-  pointer-events: none;
-  visibility: hidden;
-  transition: background 0.35s var(--ease), backdrop-filter 0.35s var(--ease);
+  background: rgba(5, 8, 15, 0.6);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  z-index: 8900 !important;
+  pointer-events: none !important;
+  visibility: hidden !important;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 .fh-nav__backdrop.is-open,
 .fh-nav.is-open .fh-nav__backdrop {
   display: block !important;
-  background: rgba(5, 8, 15, 0.6);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  pointer-events: auto;
-  visibility: visible;
+  pointer-events: auto !important;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 @media (max-width: 1080px) {
