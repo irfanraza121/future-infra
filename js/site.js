@@ -350,7 +350,6 @@
           item.setAttribute("data-value", opt.value);
 
           item.addEventListener("click", function (e) { selectItem(opt, item, e); });
-          item.addEventListener("pointerdown", function (e) { selectItem(opt, item, e); });
           dropdown.appendChild(item);
         });
         updateTriggerLabel();
@@ -361,11 +360,16 @@
 
       selectEl.addEventListener("change", updateTriggerLabel);
 
+      var lastSelectToggle = 0;
       function toggleDropdown(e) {
         if (e) {
           e.preventDefault();
           e.stopPropagation();
         }
+        var now = Date.now();
+        if (now - lastSelectToggle < 250) return;
+        lastSelectToggle = now;
+
         var wasOpen = wrapper.classList.contains("is-open");
 
         /* close every open dropdown */
@@ -394,9 +398,6 @@
       }
 
       trigger.addEventListener("click", toggleDropdown);
-      trigger.addEventListener("pointerdown", function (e) {
-        if (e.pointerType === "touch") toggleDropdown(e);
-      });
     });
   }
 
@@ -504,7 +505,7 @@
       var el = $(id); if (el) el.addEventListener("change", apply);
     });
     var reset = $("#pfReset");
-    if (reset) reset.addEventListener("click", function () { [fType, fLoc, fStatus, fBudget].forEach(function (e) { if (e) e.value = ""; }); apply(); toast("Filters cleared", "Showing all projects."); });
+    if (reset) reset.addEventListener("click", function () { [fType, fLoc, fStatus, fBudget].forEach(function (e) { if (e) { e.value = ""; e.dispatchEvent(new Event("change", { bubbles: true })); } }); apply(); toast("Filters cleared", "Showing all projects."); });
     apply();
   }
 
@@ -551,7 +552,7 @@
     var reset = $("#psReset");
     if (reset) reset.addEventListener("click", function () {
       plotState = { project: "", location: "", type: "", facing: "", area: "", status: "" };
-      ["#psProject", "#psType", "#psFacing", "#psArea", "#psStatus"].forEach(function (id) { var e = $(id); if (e) e.value = ""; });
+      ["#psProject", "#psType", "#psFacing", "#psArea", "#psStatus"].forEach(function (id) { var e = $(id); if (e) { e.value = ""; e.dispatchEvent(new Event("change", { bubbles: true })); } });
       buildPlotFacingSelect($("#psFacing"));
       renderPlotTable(); renderPlotMap(); toast("Report reset", "Showing complete plot inventory.");
     });
@@ -720,7 +721,7 @@
     }
 
     var reset = $("#fsReset");
-    if (reset) reset.addEventListener("click", function () { [proj, fType, fWing, fFloor, fFacing, fStatus, fArea].forEach(function (e) { if (e) e.value = ""; }); buildFlatFacingSelect($("#fsFacing")); apply(); toast("Report reset", "Showing complete flat inventory."); });
+    if (reset) reset.addEventListener("click", function () { [proj, fType, fWing, fFloor, fFacing, fStatus, fArea].forEach(function (e) { if (e) { e.value = ""; e.dispatchEvent(new Event("change", { bubbles: true })); } }); buildFlatFacingSelect($("#fsFacing")); apply(); toast("Report reset", "Showing complete flat inventory."); });
     apply();
     initCustomSelects($(".filter-bar"));
   }

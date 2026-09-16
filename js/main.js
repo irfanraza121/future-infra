@@ -52,6 +52,7 @@
     { label: "Gallery", href: "gallery.html", icon: "image" },
     { label: "Bank Details", href: "bank-details.html", icon: "bank" },
     { label: "EMI Calculator", href: "emi-calculator.html", icon: "calc" },
+    { label: "About", href: "about.html", icon: "users" },
     { label: "Contact", href: "contact.html", icon: "phone" }
   ];
 
@@ -227,8 +228,12 @@
     var btn = document.getElementById("themeToggle");
     if (!btn) return;
 
+    var lastToggle = 0;
     function doToggle(e) {
       if (e) e.preventDefault();
+      var now = Date.now();
+      if (now - lastToggle < 300) return;
+      lastToggle = now;
       var cur = document.documentElement.getAttribute("data-theme") || "dark";
       var next = cur === "dark" ? "light" : "dark";
       document.documentElement.setAttribute("data-theme", next);
@@ -236,9 +241,6 @@
     }
 
     btn.addEventListener("click", doToggle);
-    btn.addEventListener("pointerdown", function (e) {
-      if (e.pointerType === "touch") doToggle(e);
-    });
   }
 
   /* ------------------------------------------------------------------ */
@@ -387,34 +389,35 @@
       document.body.classList.add("no-scroll");
     }
 
+    var lastNavTime = 0;
     function handleToggle(e) {
       if (e) { e.preventDefault(); e.stopPropagation(); }
+      var now = Date.now();
+      if (now - lastNavTime < 300) return;
+      lastNavTime = now;
       nav.classList.contains("is-open") ? closeNav() : openNav();
     }
 
     var toggle = document.getElementById("fhNavToggle");
     if (toggle) {
       toggle.addEventListener("click", handleToggle);
-      toggle.addEventListener("pointerdown", function (e) {
-        if (e.pointerType === "touch") handleToggle(e);
-      });
     }
 
     /* Close on drawer close button */
     var drawerClose = document.getElementById("fhDrawerClose");
     if (drawerClose) {
-      drawerClose.addEventListener("click", closeNav);
-      drawerClose.addEventListener("pointerdown", function (e) {
-        if (e.pointerType === "touch") closeNav();
+      drawerClose.addEventListener("click", function (e) {
+        if (e) e.preventDefault();
+        closeNav();
       });
     }
 
     /* Close on backdrop click */
     var backdrop = getBackdrop();
     if (backdrop) {
-      backdrop.addEventListener("click", closeNav);
-      backdrop.addEventListener("pointerdown", function (e) {
-        if (e.pointerType === "touch") closeNav();
+      backdrop.addEventListener("click", function (e) {
+        if (e) e.preventDefault();
+        closeNav();
       });
     }
 
