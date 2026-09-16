@@ -1105,13 +1105,21 @@ table.data .actions { display: flex; gap: 8px; flex-wrap: wrap; }
 }
 
 @media (max-width: 1080px) {
-  /* Drawer itself — slides in from right (~30% width, min 250px fallback for narrow phones) */
+  /* Reveal elements on mobile: ensure 100% visibility for dynamic cards */
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+
+  /* Drawer itself — slides in from right */
   .fh-nav__links {
     position: fixed;
     top: 0; right: 0; bottom: 0;
     height: 100vh;
-    width: 30%;
-    min-width: 250px;
+    width: 80%;
+    min-width: 240px;
     max-width: 320px;
     flex-direction: column;
     align-items: stretch;
@@ -1127,7 +1135,7 @@ table.data .actions { display: flex; gap: 8px; flex-wrap: wrap; }
     pointer-events: none;
     transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.35s;
     overflow-y: auto;
-    z-index: 2147483647 !important;
+    z-index: 9100 !important;
     box-shadow: -20px 0 60px rgba(0, 0, 0, 0.55);
     display: flex;
   }

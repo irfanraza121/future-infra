@@ -185,6 +185,7 @@
       if ($("#hsBudget") && $("#hsBudget").value) params.set("budget", $("#hsBudget").value);
       window.location.href = (kind === "flat" ? "flat-status.html?" : "plot-status.html?") + params.toString();
     });
+    document.dispatchEvent(new Event("fh:refresh"));
   }
 
   function initCountsIn(scope) {
@@ -554,6 +555,7 @@
       buildPlotFacingSelect($("#psFacing"));
       renderPlotTable(); renderPlotMap(); toast("Report reset", "Showing complete plot inventory.");
     });
+    document.dispatchEvent(new Event("fh:refresh"));
   }
 
   function buildProjectSelect(sel) {
@@ -722,6 +724,7 @@
     if (reset) reset.addEventListener("click", function () { [proj, fType, fWing, fFloor, fFacing, fStatus, fArea].forEach(function (e) { if (e) { e.value = ""; e.dispatchEvent(new Event("change", { bubbles: true })); } }); buildFlatFacingSelect($("#fsFacing")); apply(); toast("Report reset", "Showing complete flat inventory."); });
     apply();
     initCustomSelects($(".filter-bar"));
+    document.dispatchEvent(new Event("fh:refresh"));
   }
 
   /* ------------------------------------------------------------------ */
