@@ -1721,37 +1721,49 @@ html[data-theme="light"] .badge--available {
 /* ============================================================
    MOBILE RESPONSIVENESS & UNFREEZE TOUCH ARCHITECTURE
    ============================================================ */
-@media (max-width: 768px) {
-  /* 1. Prevent body horizontal overflow while keeping vertical scroll 100% active */
+@media (max-width: 1080px) {
+  /* 1. Uninhibited natural window scrolling for mobile viewports */
   html {
     overflow-x: hidden !important;
+    overflow-y: visible !important;
+    height: auto !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
   }
   body {
     overflow-x: hidden !important;
+    overflow-y: visible !important;
+    height: auto !important;
     max-width: 100vw !important;
     position: relative !important;
+    touch-action: pan-y !important;
+    -webkit-overflow-scrolling: touch !important;
   }
-  body:not(.no-scroll) {
-    overflow-y: auto !important;
-    height: auto !important;
+  body.no-scroll {
+    overflow: hidden !important;
   }
 
-  /* 2. Strict non-blocking for hidden overlays */
-  .fh-transition, .fh-loader {
+  /* 2. Touch gesture pass-through for layout containers */
+  header, section, main, div, .hero, .page-hero, .section, .container, .card, .search-panel, .panel, .split {
+    touch-action: pan-y !important;
+  }
+
+  /* 3. Strict non-blocking for hidden overlays & cursor */
+  .fh-transition, .fh-loader, .fh-cursor, .fh-cursor-dot {
     display: none !important;
     pointer-events: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
   }
 
-  /* 3. Direct, active touch target priority for all interactive elements */
+  /* 4. Direct, active touch target priority for all interactive elements */
   a, button, input, select, textarea, .btn, .tabs button, .gallery-item, .plot-unit, .stat, .custom-select__trigger {
     pointer-events: auto !important;
     touch-action: manipulation !important;
     -webkit-tap-highlight-color: rgba(20, 107, 255, 0.2);
   }
 
-  /* 4. Ensure [data-reveal] elements are 100% visible on mobile */
+  /* 5. Ensure [data-reveal] elements are 100% visible on mobile */
   [data-reveal] {
     opacity: 1 !important;
     transform: none !important;
